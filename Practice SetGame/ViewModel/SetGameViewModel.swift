@@ -22,6 +22,16 @@ import Foundation
         game.score
     }
     
+    var dealMoreCardsDisabled: Bool {
+        if game.deck.count == 0 && game.cardsFilter(.matched).count != 0 {
+            return false
+        } else if game.deck.count == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func initialDealCards() {
         game.dealTwelveCards()
     }
