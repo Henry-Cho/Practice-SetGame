@@ -43,7 +43,7 @@ struct SymbolView: View {
         }
     }
     var body: some View {
-        HStack(spacing: 0) {
+        HStack {
             ForEach(0..<card.number.rawValue, id:\.self) { _ in
                 ZStack {
                     Group {

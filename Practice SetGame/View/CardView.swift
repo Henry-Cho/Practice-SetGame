@@ -17,8 +17,9 @@ struct CardView: View {
             .padding(geometry.size.width * CardConstants.paddingScaleFactor)
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
-        .aspectRatio(CardConstants.aspectRatio, contentMode: .fit)
         .background(cardBackgroundColor)
+        .cardify(isFaceUp: true)
+        .aspectRatio(CardConstants.aspectRatio, contentMode: .fit)
     }
     
     private var cardBackgroundColor: Color? {
@@ -43,4 +44,5 @@ private struct DrawingConstants {
 
 #Preview {
     CardView(card: Card(color: .red, number: .two, symbol: .squiggle, shading: .shaded))
+        .padding()
 }
